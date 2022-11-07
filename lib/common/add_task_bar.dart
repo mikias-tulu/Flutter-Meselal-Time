@@ -15,6 +15,22 @@ class _AddTaskPageState extends State<AddTaskPage> {
   DateTime _selectedDate = DateTime.now();
   String _endTime = "9:30 PM";
   String _startTime = DateFormat("hh:mm a").format(DateTime.now()).toString();
+  int _selectedRemind = 5;
+  List<int> remindList = [
+    5,
+    10,
+    15,
+    20,
+  ];
+
+  String _selectedRepeat = "None";
+  List<String> repeatList = [
+    "None",
+    "Daily",
+    "Weekly",
+    "Monthly",
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,7 +67,9 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       title: "Start Date",
                       hint: _startTime,
                       widget: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          _getTimeFromUser(isStartTime: true);
+                        },
                         icon: Icon(
                           Icons.access_time_rounded,
                           color: Colors.grey,
@@ -67,7 +85,9 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       title: "End Date",
                       hint: _endTime,
                       widget: IconButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          _getTimeFromUser(isStartTime: false);
+                        },
                         icon: Icon(
                           Icons.access_time_rounded,
                           color: Colors.grey,
@@ -76,6 +96,57 @@ class _AddTaskPageState extends State<AddTaskPage> {
                     ),
                   ),
                 ],
+              ),
+              MyInputField(
+                title: "Remind",
+                hint: "$_selectedRemind minutes early",
+                widget: DropdownButton(
+                  icon: Icon(
+                    Icons.keyboard_arrow_down,
+                    color: Colors.grey,
+                  ),
+                  iconSize: 32,
+                  elevation: 4,
+                  style: subTitleStyle,
+                  underline: Container(height: 0),
+                  onChanged: (String? newvalue) {
+                    setState(() {
+                      _selectedRemind = int.parse(newvalue!);
+                    });
+                  },
+                  items: remindList.map<DropdownMenuItem<String>>((int value) {
+                    return DropdownMenuItem<String>(
+                      value: value.toString(),
+                      child: Text(value.toString()),
+                    );
+                  }).toList(),
+                ),
+              ),
+              MyInputField(
+                title: "Repeat",
+                hint: "$_selectedRepeat",
+                widget: DropdownButton(
+                  icon: Icon(
+                    Icons.keyboard_arrow_down,
+                    color: Colors.grey,
+                  ),
+                  iconSize: 32,
+                  elevation: 4,
+                  style: subTitleStyle,
+                  underline: Container(height: 0),
+                  onChanged: (String? newvalue) {
+                    setState(() {
+                      _selectedRepeat = newvalue!;
+                    });
+                  },
+                  items:
+                      repeatList.map<DropdownMenuItem<String>>((String? value) {
+                    return DropdownMenuItem<String>(
+                      value: value,
+                      child: Text(value!, style: TextStyle(color: Colors.grey)),
+                    );
+                  }).toList(),
+                ),
               ),
             ],
           ),
@@ -126,5 +197,31 @@ class _AddTaskPageState extends State<AddTaskPage> {
     } else {
       print("it's null or something is wrong");
     }
+  }
+
+  _getTimeFromUser({required bool isStartTime}) async {
+    var pickedTime = await _showTimePicker();
+    String _formatedTime = pickedTime.format(context);
+    if (pickedTime == null) {
+      print("Time cancelled");
+    } else if (isStartTime == true) {
+      setState(() {
+        _startTime = _formatedTime;
+      });
+    } else if (isStartTime = false) {
+      setState(() {
+        _endTime = _formatedTime;
+      });
+    }
+  }
+
+  _showTimePicker() {
+    return showTimePicker(
+        initialEntryMode: TimePickerEntryMode.input,
+        context: context,
+        initialTime: TimeOfDay(
+          hour: int.parse(_startTime.split(":")[0]),
+          minute: int.parse(_startTime.split(":")[1].split(" ")[0]),
+        ));
   }
 }
