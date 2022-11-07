@@ -48,28 +48,28 @@ class _HomePageState extends State<HomePage> {
       margin: const EdgeInsets.only(top: 20, left: 20),
       child: DatePicker(
         DateTime.now(),
-        height: 100,
-        width: 20,
+        height: 90,
+        width: 70,
         initialSelectedDate: DateTime.now(),
         selectionColor: primaryClr,
         selectedTextColor: Colors.white,
         dateTextStyle: GoogleFonts.lato(
           textStyle: const TextStyle(
-            fontSize: 20,
+            fontSize: 18,
             fontWeight: FontWeight.w600,
             color: Colors.grey,
           ),
         ),
         dayTextStyle: GoogleFonts.lato(
           textStyle: const TextStyle(
-            fontSize: 16,
+            fontSize: 14,
             fontWeight: FontWeight.w600,
             color: Colors.grey,
           ),
         ),
         monthTextStyle: GoogleFonts.lato(
           textStyle: const TextStyle(
-            fontSize: 14,
+            fontSize: 12,
             fontWeight: FontWeight.w600,
             color: Colors.grey,
           ),
