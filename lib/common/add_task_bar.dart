@@ -1,4 +1,5 @@
 import 'package:dos/common/theme.dart';
+import 'package:dos/common/widgets/button.dart';
 import 'package:dos/common/widgets/input_field.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -30,6 +31,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
     "Weekly",
     "Monthly",
   ];
+
+  int _selectedColor = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -148,6 +151,17 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   }).toList(),
                 ),
               ),
+              const SizedBox(
+                height: 18,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  _colorPallete(),
+                  MyButton(label: "Create Task", onTab: () => null)
+                ],
+              ),
             ],
           ),
         ),
@@ -223,5 +237,52 @@ class _AddTaskPageState extends State<AddTaskPage> {
           hour: int.parse(_startTime.split(":")[0]),
           minute: int.parse(_startTime.split(":")[1].split(" ")[0]),
         ));
+  }
+
+  _colorPallete() {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Text",
+          style: titleStyle,
+        ),
+        const SizedBox(
+          height: 8.0,
+        ),
+        Wrap(
+          children: List<Widget>.generate(
+            3,
+            (int index) {
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _selectedColor = index;
+                  });
+                },
+                child: Padding(
+                  padding: const EdgeInsets.only(right: 8.0),
+                  child: CircleAvatar(
+                    radius: 14,
+                    backgroundColor: index == 0
+                        ? primaryClr
+                        : index == 1
+                            ? pinkClr
+                            : yellowClr,
+                    child: _selectedColor == index
+                        ? Icon(
+                            Icons.done,
+                            color: Colors.white,
+                            size: 16,
+                          )
+                        : Container(),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ],
+    );
   }
 }
