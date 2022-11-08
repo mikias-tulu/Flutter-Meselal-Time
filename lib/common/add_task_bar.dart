@@ -13,6 +13,8 @@ class AddTaskPage extends StatefulWidget {
 }
 
 class _AddTaskPageState extends State<AddTaskPage> {
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _noteController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
   String _endTime = "9:30 PM";
   String _startTime = DateFormat("hh:mm a").format(DateTime.now()).toString();
@@ -49,8 +51,16 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 "Add Task",
                 style: headingStyle,
               ),
-              MyInputField(title: "title", hint: "Enter your title"),
-              MyInputField(title: "note", hint: "Enter your note"),
+              MyInputField(
+                title: "title",
+                hint: "Enter your title",
+                controller: _titleController,
+              ),
+              MyInputField(
+                title: "note",
+                hint: "Enter your note",
+                controller: _noteController,
+              ),
               MyInputField(
                 title: "Date",
                 hint: DateFormat.yMd().format(_selectedDate),
@@ -159,7 +169,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   _colorPallete(),
-                  MyButton(label: "Create Task", onTab: () => null)
+                  MyButton(label: "Create Task", onTab: () => _validateData())
                 ],
               ),
             ],
@@ -167,6 +177,22 @@ class _AddTaskPageState extends State<AddTaskPage> {
         ),
       ),
     );
+  }
+
+  _validateData() {
+    if (_titleController.text.isNotEmpty && _noteController.text.isNotEmpty) {
+      //
+      Get.back();
+    } else if (_titleController.text.isEmpty || _noteController.text.isEmail) {
+      Get.snackbar(
+        "Required",
+        "All fields are required !",
+        snackPosition: SnackPosition.BOTTOM,
+        backgroundColor: Colors.white,
+        colorText: pinkClr,
+        icon: Icon(Icons.warning_amber_rounded),
+      );
+    }
   }
 
   _appBar(BuildContext context) {
@@ -222,7 +248,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
       setState(() {
         _startTime = _formatedTime;
       });
-    } else if (isStartTime = false) {
+    } else if (isStartTime == false) {
       setState(() {
         _endTime = _formatedTime;
       });
