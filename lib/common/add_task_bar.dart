@@ -1,9 +1,12 @@
 import 'package:dos/common/theme.dart';
 import 'package:dos/common/widgets/button.dart';
 import 'package:dos/common/widgets/input_field.dart';
+import 'package:dos/controllers/task_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
+
+import '../models/task.dart';
 
 class AddTaskPage extends StatefulWidget {
   const AddTaskPage({super.key});
@@ -13,6 +16,7 @@ class AddTaskPage extends StatefulWidget {
 }
 
 class _AddTaskPageState extends State<AddTaskPage> {
+  final TaskController _taskController = Get.put(TaskController());
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _noteController = TextEditingController();
   DateTime _selectedDate = DateTime.now();
@@ -181,7 +185,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
 
   _validateData() {
     if (_titleController.text.isNotEmpty && _noteController.text.isNotEmpty) {
-      //
+      _addTaskToDb();
       Get.back();
     } else if (_titleController.text.isEmpty || _noteController.text.isEmail) {
       Get.snackbar(
@@ -193,6 +197,23 @@ class _AddTaskPageState extends State<AddTaskPage> {
         icon: Icon(Icons.warning_amber_rounded),
       );
     }
+  }
+
+  _addTaskToDb() async {
+    int value = await _taskController.addTask(
+      task: Task(
+        note: _noteController.text,
+        title: _titleController.text,
+        date: DateFormat.yMd().format(_selectedDate),
+        startTime: _startTime,
+        endTime: _endTime,
+        remind: _selectedRemind,
+        repeat: _selectedRepeat,
+        color: _selectedColor,
+        isCompleted: 0,
+      ),
+    );
+    print("New id " + "$value");
   }
 
   _appBar(BuildContext context) {
