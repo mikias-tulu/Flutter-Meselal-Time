@@ -48,6 +48,7 @@ class Task {
     data['color'] = this.color;
     data['remind'] = this.remind;
     data['repeat'] = this.repeat;
+
     return data;
   }
 }
