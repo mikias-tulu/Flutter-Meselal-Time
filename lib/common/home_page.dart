@@ -11,6 +11,9 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 
+
+import '../controllers/task_controller.dart';
+
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
 
@@ -20,7 +23,9 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   DateTime _selectedDate = DateTime.now();
+  final _taskController = Get.put(TaskController());
   var notifyHelper;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -39,8 +44,25 @@ class _HomePageState extends State<HomePage> {
         children: [
           _addTaskbar(),
           _addDateBar(),
+          SizedBox(
+            height: 10,
+          ),
+          _showTasks(),
         ],
       ),
+    );
+  }
+
+  _showTasks() {
+    return Expanded(
+      child: Obx(() {
+        return ListView.builder(
+            itemCount: _taskController.taskList.length,
+            itemBuilder: (_, index) {
+              print(_taskController.taskList.length);
+              return AnimationConfiguration.staggeredList(p, child: );
+            });
+      }),
     );
   }
 
@@ -105,7 +127,10 @@ class _HomePageState extends State<HomePage> {
           ),
           MyButton(
             label: "+ Add Task",
-            onTab: () => Get.to(AddTaskPage()),
+            onTab: () async {
+              await Get.to(AddTaskPage());
+              _taskController.getTasks();
+            },
           )
         ],
       ),
