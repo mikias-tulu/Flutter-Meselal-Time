@@ -1,3 +1,4 @@
+import 'package:dos/db/db_helper.dart';
 import 'package:dos/services/theme_services.dart';
 import 'package:flutter/material.dart';
 import 'package:dos/common/home_page.dart';
@@ -9,6 +10,7 @@ import 'common/theme.dart';
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await GetStorage.init();
+  await DBHelper.initDb();
   runApp(const MyApp());
 }
 
