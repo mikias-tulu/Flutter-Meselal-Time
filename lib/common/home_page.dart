@@ -4,15 +4,17 @@ import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:dos/common/add_task_bar.dart';
 import 'package:dos/common/theme.dart';
 import 'package:dos/common/widgets/button.dart';
+import 'package:dos/common/widgets/task_tile.dart';
 import 'package:dos/services/notification_services.dart';
 import 'package:dos/services/theme_services.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
-
+import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
 import '../controllers/task_controller.dart';
+import '../models/task.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -60,11 +62,29 @@ class _HomePageState extends State<HomePage> {
             itemCount: _taskController.taskList.length,
             itemBuilder: (_, index) {
               print(_taskController.taskList.length);
-              return AnimationConfiguration.staggeredList(p, child: );
+              return AnimationConfiguration.staggeredList(
+                position: index,
+                child: SlideAnimation(
+                    child: FadeInAnimation(
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: () {
+                          _showBottomSheet(
+                              context, _taskController.taskList[index]);
+                        },
+                        child: TaskTile(_taskController.taskList[index]),
+                      ),
+                    ],
+                  ),
+                )),
+              );
             });
       }),
     );
   }
+
+  _showBottomSheet(BuildContext context, Task task) {}
 
   _addDateBar() {
     return Container(
