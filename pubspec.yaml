@@ -44,6 +44,7 @@ dependencies:
   flutter_local_notifications: 9.9.1
   flutter_native_timezone:
   sqflite:
+  flutter_staggered_animations:
 
 dev_dependencies:
   flutter_test:
