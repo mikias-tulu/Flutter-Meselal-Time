@@ -108,6 +108,7 @@ class _HomePageState extends State<HomePage> {
                 : _bottomSheetButton(
                     label: "Task Completed",
                     onTap: () {
+                      _taskController.markTaskCompleted(task.id!);
                       Get.back();
                     },
                     clr: primaryClr,
@@ -117,7 +118,6 @@ class _HomePageState extends State<HomePage> {
               label: "Delete Task",
               onTap: () {
                 _taskController.delete(task);
-                _taskController.getTasks();
                 Get.back();
               },
               clr: Colors.red[300]!,
