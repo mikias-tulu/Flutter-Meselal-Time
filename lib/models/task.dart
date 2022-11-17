@@ -25,7 +25,7 @@ class Task {
 
   Task.fromJson(Map<String, dynamic> json) {
     id = json['id'];
-    title = json['title'];
+    title = json['title'].toString();
     note = json['note'];
     isCompleted = json['isCompleted'];
     date = json['date'];
