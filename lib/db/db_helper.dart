@@ -12,7 +12,8 @@ class DBHelper {
       return;
     }
     try {
-      String _path = await getDatabasesPath() + 'tasks.db';
+      String _path = await getDatabasesPath() +
+          'tasks.db'; // '${await getDatabasesPath()}tasks.db';
       _db =
           await openDatabase(_path, version: _version, onCreate: (db, version) {
         print("Creating a new one");

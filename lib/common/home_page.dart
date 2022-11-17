@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:dos/common/add_task_bar.dart';
 import 'package:dos/common/theme.dart';
@@ -46,7 +44,7 @@ class _HomePageState extends State<HomePage> {
         children: [
           _addTaskbar(),
           _addDateBar(),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           _showTasks(),
@@ -127,7 +125,7 @@ class _HomePageState extends State<HomePage> {
                 color: Get.isDarkMode ? Colors.grey[600] : Colors.grey[300],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             task.isCompleted == 1
                 ? Container()
                 : _bottomSheetButton(
@@ -148,7 +146,7 @@ class _HomePageState extends State<HomePage> {
               clr: Colors.red[300]!,
               context: context,
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             _bottomSheetButton(
@@ -160,7 +158,7 @@ class _HomePageState extends State<HomePage> {
               isClosed: true,
               context: context,
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
           ],
@@ -238,7 +236,9 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
         onDateChange: (date) {
-          _selectedDate = date;
+          setState(() {
+            _selectedDate = date;
+          });
         },
       ),
     );
@@ -268,7 +268,7 @@ class _HomePageState extends State<HomePage> {
           MyButton(
             label: "+ Add Task",
             onTab: () async {
-              await Get.to(AddTaskPage());
+              await Get.to(() => const AddTaskPage());
               _taskController.getTasks();
             },
           )
@@ -298,7 +298,7 @@ class _HomePageState extends State<HomePage> {
           color: Get.isDarkMode ? Colors.white : Colors.black,
         ),
       ),
-      actions: [
+      actions: const [
         CircleAvatar(
           backgroundImage: AssetImage(
             "Assets/images/profile.png",

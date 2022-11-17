@@ -69,7 +69,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 title: "Date",
                 hint: DateFormat.yMd().format(_selectedDate),
                 widget: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.calendar_today_outlined,
                       color: Colors.grey,
                     ),
@@ -87,14 +87,14 @@ class _AddTaskPageState extends State<AddTaskPage> {
                         onPressed: () {
                           _getTimeFromUser(isStartTime: true);
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.access_time_rounded,
                           color: Colors.grey,
                         ),
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 12,
                   ),
                   Expanded(
@@ -105,7 +105,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                         onPressed: () {
                           _getTimeFromUser(isStartTime: false);
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.access_time_rounded,
                           color: Colors.grey,
                         ),
@@ -118,7 +118,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 title: "Remind",
                 hint: "$_selectedRemind minutes early",
                 widget: DropdownButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.keyboard_arrow_down,
                     color: Colors.grey,
                   ),
@@ -143,7 +143,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 title: "Repeat",
                 hint: "$_selectedRepeat",
                 widget: DropdownButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.keyboard_arrow_down,
                     color: Colors.grey,
                   ),
@@ -160,7 +160,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
                       repeatList.map<DropdownMenuItem<String>>((String? value) {
                     return DropdownMenuItem<String>(
                       value: value,
-                      child: Text(value!, style: TextStyle(color: Colors.grey)),
+                      child: Text(value!,
+                          style: const TextStyle(color: Colors.grey)),
                     );
                   }).toList(),
                 ),
@@ -194,7 +195,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.white,
         colorText: pinkClr,
-        icon: Icon(Icons.warning_amber_rounded),
+        icon: const Icon(Icons.warning_amber_rounded),
       );
     }
   }
@@ -230,7 +231,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
           color: Get.isDarkMode ? Colors.white : Colors.black,
         ),
       ),
-      actions: [
+      actions: const [
         CircleAvatar(
           backgroundImage: AssetImage(
             "Assets/images/profile.png",
@@ -317,7 +318,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                             ? pinkClr
                             : yellowClr,
                     child: _selectedColor == index
-                        ? Icon(
+                        ? const Icon(
                             Icons.done,
                             color: Colors.white,
                             size: 16,
