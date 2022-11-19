@@ -1,3 +1,4 @@
+import 'package:dos/common/notified_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
@@ -47,7 +48,7 @@ class NotifyHelper {
       title,
       body,
       platformChannelSpecifics,
-      payload: 'It could be anything you pass',
+      payload: 'Theme Changed',
     );
   }
 
@@ -65,7 +66,7 @@ class NotifyHelper {
         uiLocalNotificationDateInterpretation:
             UILocalNotificationDateInterpretation.absoluteTime,
         matchDateTimeComponents: DateTimeComponents.time,
-        payload: "{$task.title} |" + "{$task.note}|");
+        payload: "${task.title} |" + "${task.note}|");
   }
 
   tz.TZDateTime _convertTime(int hour, int minutes) {
@@ -102,9 +103,7 @@ class NotifyHelper {
     } else {
       print("Notification Done");
     }
-    Get.to(() => Container(
-          color: Colors.white,
-        ));
+    Get.to(() => NotifiedPage(label: payload));
   }
 
   Future onDidReceiveLocalNotification(
