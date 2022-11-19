@@ -48,7 +48,7 @@ class NotifyHelper {
       title,
       body,
       platformChannelSpecifics,
-      payload: 'Theme Changed',
+      payload: title,
     );
   }
 
@@ -103,7 +103,12 @@ class NotifyHelper {
     } else {
       print("Notification Done");
     }
-    Get.to(() => NotifiedPage(label: payload));
+
+    if (payload == "Theme Changed") {
+      print("nothing to navigate");
+    } else {
+      Get.to(() => NotifiedPage(label: payload));
+    }
   }
 
   Future onDidReceiveLocalNotification(
