@@ -64,7 +64,8 @@ class NotifyHelper {
         androidAllowWhileIdle: true,
         uiLocalNotificationDateInterpretation:
             UILocalNotificationDateInterpretation.absoluteTime,
-        matchDateTimeComponents: DateTimeComponents.time);
+        matchDateTimeComponents: DateTimeComponents.time,
+        payload: "{$task.title} |" + "{$task.note}|");
   }
 
   tz.TZDateTime _convertTime(int hour, int minutes) {
