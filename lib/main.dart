@@ -28,15 +28,15 @@ class MyApp extends StatelessWidget {
       theme: Themes.light,
       darkTheme: Themes.dark,
       themeMode: ThemeServices().theme,
-      home: MyHomePage(
-        title: "te",
+      home: const MyHomePage(
+        title: 'Meselal',
       ),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
+  const MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
   @override
   _MyHomePageState createState() => _MyHomePageState();
@@ -47,7 +47,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   void initState() {
-    // TODO: implement initState
     super.initState();
     currentIndex = 0;
   }
@@ -84,7 +83,7 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       bottomNavigationBar: BubbleBottomBar(
         backgroundColor: Colors.grey[500],
-        hasNotch: false,
+        hasNotch: true,
         fabLocation: BubbleBottomBarFabLocation.end,
         opacity: .2,
         currentIndex: currentIndex,
