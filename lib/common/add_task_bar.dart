@@ -22,13 +22,13 @@ class _AddTaskPageState extends State<AddTaskPage> {
   DateTime _selectedDate = DateTime.now();
   String _endTime = "9:30 PM";
   String _startTime = DateFormat("hh:mm a").format(DateTime.now()).toString();
-  int _selectedRemind = 5;
-  List<int> remindList = [
+  //int _selectedRemind = 5;
+  /* List<int> remindList = [
     5,
     10,
     15,
     20,
-  ];
+  ]; */
 
   String _selectedRepeat = "None";
   List<String> repeatList = [
@@ -114,7 +114,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   ),
                 ],
               ),
-              MyInputField(
+              /* MyInputField(
                 title: "Remind",
                 hint: "$_selectedRemind minutes early",
                 widget: DropdownButton(
@@ -138,7 +138,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                     );
                   }).toList(),
                 ),
-              ),
+              ), */
               MyInputField(
                 title: "Repeat",
                 hint: "$_selectedRepeat",
@@ -208,7 +208,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
         date: DateFormat.yMd().format(_selectedDate),
         startTime: _startTime,
         endTime: _endTime,
-        remind: _selectedRemind,
+        //remind: _selectedRemind,
         repeat: _selectedRepeat,
         color: _selectedColor,
         isCompleted: 0,
