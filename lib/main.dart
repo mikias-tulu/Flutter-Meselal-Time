@@ -1,4 +1,5 @@
 import 'package:dos/common/intro_page.dart';
+import 'package:dos/common/widgets/splash.dart';
 import 'package:dos/db/db_helper.dart';
 import 'package:dos/services/theme_services.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ class MyApp extends StatelessWidget {
       theme: Themes.light,
       darkTheme: Themes.dark,
       themeMode: ThemeServices().theme,
-      home: OnBoardingPage(
+      home: const Splash(
           //title: 'Meselal',
           ),
     );
