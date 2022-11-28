@@ -21,8 +21,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   }
 
   Widget _buildFullscreenImage() {
+    //fullscreen not needed for now
     return Image.asset(
-      const AssetImage('assets/images/fullscreen.jpg').toString(),
+      'Assets/images/main.jpg',
       fit: BoxFit.cover,
       height: double.infinity,
       width: double.infinity,
@@ -30,7 +31,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     );
   }
 
-  Widget _buildImage(String assetName, [double width = 300]) {
+  Widget _buildImage(String assetName, [double width = 400]) {
     return Image.asset('Assets/images/$assetName', width: width);
   }
 
@@ -39,12 +40,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
     const bodyStyle = TextStyle(fontSize: 19.0);
 
     const pageDecoration = PageDecoration(
-      titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
-      bodyTextStyle: bodyStyle,
-      bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
-      pageColor: Colors.white,
-      imagePadding: EdgeInsets.zero,
-    );
+        titleTextStyle: TextStyle(fontSize: 28.0, fontWeight: FontWeight.w700),
+        bodyTextStyle: bodyStyle,
+        bodyPadding: EdgeInsets.fromLTRB(16.0, 0.0, 16.0, 16.0),
+        pageColor: Colors.white,
+        imageFlex: 2,
+        imagePadding: EdgeInsets.zero //(top: 100),
+        );
 
     return IntroductionScreen(
       key: introKey,
@@ -53,7 +55,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         alignment: Alignment.topRight,
         child: SafeArea(
           child: Padding(
-            padding: const EdgeInsets.only(top: 16, left: 16),
+            padding: const EdgeInsets.only(top: 16, right: 16),
             child: _buildImage('flutter.png', 50),
           ),
         ),
@@ -85,71 +87,33 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Kids and teens",
-          body:
-              "Kids and teens can track their stocks 24/7 and place trades that you approve.",
-          image: _buildImage('img3.jpg'),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Full Screen Page",
-          body:
-              "Pages can be full screen as well.\n\nLorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc id euismod lectus, non tempor felis. Nam rutrum rhoncus est ac venenatis.",
-          image: _buildFullscreenImage(),
-          decoration: pageDecoration.copyWith(
-            contentMargin: const EdgeInsets.symmetric(horizontal: 16),
-            fullScreen: true,
-            bodyFlex: 2,
-            imageFlex: 3,
-          ),
-        ),
-        PageViewModel(
           title: "Another title page",
           body: "Another beautiful body text for this example onboarding",
-          image: _buildImage('img2.jpg'),
+          image: _buildImage('img3.jpg'),
           footer: ElevatedButton(
             onPressed: () {
               introKey.currentState?.animateScroll(0);
             },
-            child: const Text(
-              'FooButton',
-              style: TextStyle(color: Colors.white),
-            ),
             style: ElevatedButton.styleFrom(
               primary: Colors.lightBlue,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(8.0),
               ),
             ),
+            child: const Text(
+              'FooButton',
+              style: TextStyle(color: Colors.white),
+            ),
           ),
-          decoration: pageDecoration,
-        ),
-        PageViewModel(
-          title: "Title of last page - reversed",
-          bodyWidget: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-              Text("Click on ", style: bodyStyle),
-              Icon(Icons.edit),
-              Text(" to edit a post", style: bodyStyle),
-            ],
-          ),
-          decoration: pageDecoration.copyWith(
-            bodyFlex: 2,
-            imageFlex: 4,
-            bodyAlignment: Alignment.bottomCenter,
-            imageAlignment: Alignment.topCenter,
-          ),
-          image: _buildImage('img1.jpg'),
-          reverse: true,
+          decoration: pageDecoration.copyWith(imageFlex: 1),
         ),
       ],
       onDone: () => _onIntroEnd(context),
       //onSkip: () => _onIntroEnd(context), // You can override onSkip callback
-      showSkipButton: false,
+      showSkipButton: true,
       skipOrBackFlex: 0,
       nextFlex: 0,
-      showBackButton: true,
+      showBackButton: false,
       //rtl: true, // Display as right-to-left
       back: const Icon(Icons.arrow_back),
       skip: const Text('Skip', style: TextStyle(fontWeight: FontWeight.w600)),
@@ -169,9 +133,9 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         ),
       ),
       dotsContainerDecorator: const ShapeDecoration(
-        color: Colors.black87,
+        color: Color.fromARGB(221, 58, 56, 56),
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.all(Radius.circular(8.0)),
+          borderRadius: BorderRadius.all(Radius.circular(10.0)),
         ),
       ),
     );
