@@ -1,4 +1,5 @@
 import 'package:dos/common/add_task_bar.dart';
+import 'package:dos/common/pages/logs.dart';
 import 'package:dos/controllers/task_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
@@ -34,9 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: <Widget>[
         HomePage(),
-        Container(
-          color: Colors.red,
-        ),
+        Logs(),
         Container(
           color: Colors.yellow,
         ),
