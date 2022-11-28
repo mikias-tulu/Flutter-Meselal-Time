@@ -1,6 +1,8 @@
 import 'dart:async';
 
 import 'package:after_layout/after_layout.dart';
+import 'package:dos/common/intro_page.dart';
+import 'package:dos/common/menu.dart';
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -17,12 +19,14 @@ class SplashState extends State<Splash> with AfterLayoutMixin<Splash> {
     bool _seen = (prefs.getBool('seen') ?? false);
 
     if (_seen) {
-      Navigator.of(context)
-          .pushReplacement(MaterialPageRoute(builder: (context) => Home()));
+      Navigator.of(context).pushReplacement(MaterialPageRoute(
+          builder: (context) => const MyHomePage(
+                title: 'Meselal',
+              )));
     } else {
       await prefs.setBool('seen', true);
       Navigator.of(context).pushReplacement(
-          MaterialPageRoute(builder: (context) => IntroScreen()));
+          MaterialPageRoute(builder: (context) => OnBoardingPage()));
     }
   }
 
@@ -34,34 +38,6 @@ class SplashState extends State<Splash> with AfterLayoutMixin<Splash> {
     return const Scaffold(
       body: Center(
         child: Text('Loading...'),
-      ),
-    );
-  }
-}
-
-class Home extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Hello'),
-      ),
-      body: const Center(
-        child: Text('This is the second page'),
-      ),
-    );
-  }
-}
-
-class IntroScreen extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('IntroScreen'),
-      ),
-      body: const Center(
-        child: Text('This is the IntroScreen'),
       ),
     );
   }
