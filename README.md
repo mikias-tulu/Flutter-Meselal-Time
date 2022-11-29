@@ -88,11 +88,6 @@ This is an example of how to list things you need to use the software and how to
 ```
 
 
-
-### Creating A Pull Request
-
-
-
 ## License
 
 Distributed under the MIT License. See [LICENSE](https://github.com/Mikias-tulu/flutter-meselal-time/blob/main/LICENSE.md) for more information.
@@ -104,5 +99,4 @@ Distributed under the MIT License. See [LICENSE](https://github.com/Mikias-tulu/
 ## Acknowledgements
 
 * []()
-* []()
-* []()
+
