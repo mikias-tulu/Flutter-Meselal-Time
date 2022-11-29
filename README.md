@@ -1,16 +1,108 @@
-# Meselal-Time
+<br/>
+<p align="center">
+  <a href="https://github.com/Mikias-tulu/flutter-meselal-time">
+    <img src="https://raw.githubusercontent.com/mikias-tulu/Flutter-Meselal-Time/master/assets/images/launchericon.png" alt="Logo" width="80" height="80">
+  </a>
 
-A new Flutter project.
+  <h3 align="center">MESELAL: Task Management App</h3>
+
+  <p align="center">
+    This is your life. It's time you took control!
+    <br/>
+    <br/>
+    <a href="https://github.com/Mikias-tulu/flutter-meselal-time"><strong>Explore the docs »</strong></a>
+    <br/>
+    <br/>
+    <a href="https://github.com/Mikias-tulu/flutter-meselal-time">View Demo</a>
+    .
+    <a href="https://github.com/Mikias-tulu/flutter-meselal-time/issues">Report Bug</a>
+    .
+    <a href="https://github.com/Mikias-tulu/flutter-meselal-time/issues">Request Feature</a>
+  </p>
+</p>
+
+![Downloads](https://img.shields.io/github/downloads/Mikias-tulu/flutter-meselal-time/total) ![Contributors](https://img.shields.io/github/contributors/Mikias-tulu/flutter-meselal-time?color=dark-green) ![Issues](https://img.shields.io/github/issues/Mikias-tulu/flutter-meselal-time) ![License](https://img.shields.io/github/license/Mikias-tulu/flutter-meselal-time) 
+
+## Table Of Contents
+
+* [About the Project](#about-the-project)
+* [Built With](#built-with)
+* [Getting Started](#getting-started)
+  * [Prerequisites](#prerequisites)
+  * [Installation](#installation)
+* [License](#license)
+* [Authors](#authors)
+* [Acknowledgements](#acknowledgements)
+
+## About The Project
+
+![Screen Shot](images/screenshot.png)
+
+Task management tools address a general need to organize, prioritize and visualize work. Through analysis, you learn how to get things done in more effective ways. Part of being organized includes setting priorities for tasks, visualizing the progress of tasks as they pass through stages of completion and compiling analysis or reports to direct future tasks and workflows.
+
+When properly applied, task management tools can :point_down: :
+
+ * <b>Manage and organize workloads: </b> Know what you have to do, and which items have priority. Assign and execute.
+ * <b>Improve the quality of work:</b> Quality is never sacrificed for speed of production when tasks are organized, and information is correctly utilized.
+ * <b>Drive collaboration: </b>Teams work better when there is a shared understanding of what needs to be done and ideas are easily communicated through a visual task management system.
+ * <b>Reduce waste: </b>Eliminate time spent thinking of what to do next or reworking tasks that were not completed correctly on the first attempt.
+ * <b>Meet deadlines: </b>With an organized task management system you and your team work more efficiently making missed deadlines a thing of the past.
+
+
+## Built With
+
+Flutter 
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This is an example of how you may give instructions on setting up your project locally.
+To get a local copy up and running follow these simple example steps.
 
-A few resources to get you started if this is your first Flutter project:
+### Prerequisites
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+This is an example of how to list things you need to use the software and how to install them.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+* flutter sdk
+* android sdk
+* Text Editor
+
+### Installation
+
+1. Clone the repo
+
+```sh
+      https://github.com/mikias-tulu/Flutter-Meselal-Time.git
+```
+
+2.  Open it into Android Studio, VSCode, or Other IDE / Text Editor
+
+4. Get dependencies 
+
+```bash
+   flutter pub get
+```
+5. Run
+
+```sh
+   flutter run
+```
+
+
+
+### Creating A Pull Request
+
+
+
+## License
+
+Distributed under the MIT License. See [LICENSE](https://github.com/Mikias-tulu/flutter-meselal-time/blob/main/LICENSE.md) for more information.
+
+## Authors
+
+* **Mikias Tulu** - *CS Student* - [Mikias Tulu](https://github.com/mikias-tulu) - *Built Meselal: Task Management app*
+
+## Acknowledgements
+
+* []()
+* []()
+* []()
