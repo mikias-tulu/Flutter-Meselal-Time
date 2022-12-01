@@ -185,13 +185,15 @@ class _AddTaskPageState extends State<AddTaskPage> {
   }
 
   _validateData() {
-    if (_titleController.text.isNotEmpty && _noteController.text.isNotEmpty) {
+    if (_titleController
+        .text.isNotEmpty /*&& _noteController.text.isNotEmpty */) {
       _addTaskToDb();
       Get.back();
-    } else if (_titleController.text.isEmpty || _noteController.text.isEmail) {
+    } else if (_titleController
+        .text.isEmpty /*|| _noteController.text.isEmail*/) {
       Get.snackbar(
         "Required",
-        "All fields are required !",
+        "Title is required !",
         snackPosition: SnackPosition.BOTTOM,
         backgroundColor: Colors.white,
         colorText: pinkClr,
@@ -313,7 +315,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   child: CircleAvatar(
                     radius: 14,
                     backgroundColor: index == 0
-                        ? primaryClr
+                        ? bluefaded
                         : index == 1
                             ? pinkClr
                             : yellowClr,
