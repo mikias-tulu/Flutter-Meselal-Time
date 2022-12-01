@@ -1,4 +1,4 @@
-import 'package:dos/common/notified_page.dart';
+import 'package:dos/common/pages/notified_page.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
