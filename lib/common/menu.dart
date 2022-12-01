@@ -1,5 +1,7 @@
 import 'package:dos/common/add_task_bar.dart';
 import 'package:dos/common/pages/logs.dart';
+import 'package:dos/common/pages/progress.dart';
+import 'package:dos/common/theme.dart';
 import 'package:dos/controllers/task_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
@@ -35,41 +37,36 @@ class _MyHomePageState extends State<MyHomePage> {
     return Scaffold(
       body: <Widget>[
         HomePage(),
-        Logs(),
-        Container(
-          color: Colors.yellow,
-        ),
-        Container(
-          color: Colors.green,
-        ),
+        const Logs(),
+        const ProgressPage(),
       ][currentIndex],
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
           await Get.to(() => const AddTaskPage());
           Get.put(TaskController()).getTasks();
         },
-        backgroundColor: Colors.red,
+        backgroundColor: bluishClr,
         child: const Icon(Icons.add),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       bottomNavigationBar: BubbleBottomBar(
-        backgroundColor: Colors.grey[500],
+        backgroundColor: Colors.white,
         hasNotch: true,
         fabLocation: BubbleBottomBarFabLocation.end,
-        opacity: .2,
+        opacity: 0.5,
         currentIndex: currentIndex,
         onTap: changePage,
         borderRadius: const BorderRadius.vertical(
           top: Radius.circular(25),
         ), //border radius doesn't work when the notch is enabled.
-        elevation: 8,
+        elevation: 10,
         tilesPadding: const EdgeInsets.symmetric(
           vertical: 8.0,
         ),
 
         items: const <BubbleBottomBarItem>[
           BubbleBottomBarItem(
-            backgroundColor: Colors.red,
+            backgroundColor: bluishClr,
             icon: Icon(
               Icons.dashboard,
               color: Colors.black,
@@ -84,38 +81,33 @@ class _MyHomePageState extends State<MyHomePage> {
             ),
           ),
           BubbleBottomBarItem(
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: bluishClr,
               icon: Icon(
-                Icons.access_time,
+                Icons.history,
                 color: Colors.black,
               ),
               activeIcon: Icon(
-                Icons.access_time,
-                color: Colors.deepPurple,
+                Icons.history,
+                color: Colors.white,
               ),
-              title: Text("Logs")),
+              title: Text(
+                "Logs",
+                style: TextStyle(color: const Color(0xFFFFFFFF)),
+              )),
           BubbleBottomBarItem(
-              backgroundColor: Colors.indigo,
+              backgroundColor: bluishClr,
               icon: Icon(
-                Icons.folder_open,
+                Icons.auto_graph,
                 color: Colors.black,
               ),
               activeIcon: Icon(
-                Icons.folder_open,
-                color: Colors.indigo,
+                Icons.auto_graph,
+                color: Colors.white,
               ),
-              title: Text("Folders")),
-          BubbleBottomBarItem(
-              backgroundColor: Colors.green,
-              icon: Icon(
-                Icons.menu,
-                color: Colors.black,
-              ),
-              activeIcon: Icon(
-                Icons.menu,
-                color: Colors.green,
-              ),
-              title: Text("Menu"))
+              title: Text(
+                "Progress",
+                style: TextStyle(color: const Color(0xFFFFFFFF)),
+              )),
         ],
       ),
     );
