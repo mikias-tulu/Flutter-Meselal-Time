@@ -1,5 +1,6 @@
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:dos/common/add_task_bar.dart';
+import 'package:dos/common/pages/profile.dart';
 import 'package:dos/common/theme.dart';
 import 'package:dos/common/widgets/button.dart';
 import 'package:dos/common/widgets/task_tile.dart';
@@ -308,13 +309,18 @@ class _HomePageState extends State<HomePage> {
           color: Get.isDarkMode ? Colors.white : Colors.black,
         ),
       ),
-      actions: const [
-        CircleAvatar(
-          backgroundImage: AssetImage(
-            "Assets/images/profile.png",
+      actions: [
+        GestureDetector(
+          onTap: () {
+            Get.to(() => const ProfilePage());
+          },
+          child: const CircleAvatar(
+            backgroundImage: AssetImage(
+              "Assets/images/profile.png",
+            ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           width: 20,
         ),
       ],
