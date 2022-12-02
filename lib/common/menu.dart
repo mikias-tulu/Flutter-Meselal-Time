@@ -38,7 +38,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: <Widget>[
         HomePage(),
         const Logs(),
-        const ProgressPage(),
+        ProgressPage(),
       ][currentIndex],
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
