@@ -54,4 +54,12 @@ class DBHelper {
         WHERE id = ?
     ''', [1, id]);
   }
+
+/*
+  static getCount() async {
+    var x = await _db!.rawQuery('SELECT COUNT (*) from  $_tableName ');
+    int count = Sqflite.firstIntValue(x)!.toInt();
+    return count;
+  }
+  */
 }
