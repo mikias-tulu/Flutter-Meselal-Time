@@ -9,6 +9,7 @@ class Task {
   int? color;
   //int? remind;
   String? repeat;
+  //String? alarmTime;
 
   Task({
     this.id,
@@ -21,6 +22,7 @@ class Task {
     this.color,
     //this.remind,
     this.repeat,
+    // this.alarmTime,
   });
 
   Task.fromJson(Map<String, dynamic> json) {
@@ -34,6 +36,7 @@ class Task {
     color = json['color'];
     //remind = json['remind'];
     repeat = json['repeat'];
+    // alarmTime = json['alarmTime'];
   }
 
   Map<String, dynamic> toJson() {
@@ -48,6 +51,7 @@ class Task {
     data['color'] = this.color;
     //data['remind'] = this.remind;
     data['repeat'] = this.repeat;
+    //data['alarmTime'] = this.alarmTime;
 
     return data;
   }
