@@ -3,6 +3,7 @@ import 'package:dos/common/widgets/button.dart';
 import 'package:dos/common/widgets/input_field.dart';
 import 'package:dos/controllers/task_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_alarm_clock/flutter_alarm_clock.dart';
 import 'package:get/get.dart';
 import 'package:intl/intl.dart';
 
@@ -38,6 +39,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
 
   int _selectedColor = 0;
   bool isSwitched = false;
+  bool isAlarm = false;
+  String _alarmValue = "9:30 PM";
 
   @override
   Widget build(BuildContext context) {
@@ -191,7 +194,33 @@ class _AddTaskPageState extends State<AddTaskPage> {
                         });
                       },
                       activeTrackColor: Colors.lightBlue,
-                      activeColor: Color.fromARGB(255, 9, 108, 189),
+                      activeColor: const Color.fromARGB(255, 9, 108, 189),
+                    ),
+                  ),
+                  Text(
+                    'Alarm',
+                    style: titleStyle,
+                  ),
+                  Transform.scale(
+                    scale: 1.32,
+                    child: Switch(
+                      value: isAlarm,
+                      onChanged: (value) {
+                        setState(() {
+                          isAlarm = value;
+                          if (value == true) {
+                            //_alarmValue = _getAlarmvalue();
+                            print('alarm');
+                            _alarmValue = _getAlarmvalue().toString();
+                          } else {
+                            print('no');
+                            _alarmValue = " ";
+                          }
+                          //print(_getAlarmvalue());
+                        });
+                      },
+                      activeTrackColor: Colors.lightBlue,
+                      activeColor: const Color.fromARGB(255, 9, 108, 189),
                     ),
                   ),
                 ],
@@ -244,6 +273,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
         repeat: _selectedRepeat,
         color: _selectedColor,
         isCompleted: 0,
+        //alarmTime: _alarmValue,
       ),
     );
     print("New id " + "$value");
@@ -307,6 +337,14 @@ class _AddTaskPageState extends State<AddTaskPage> {
         _endTime = _formatedTime;
       });
     }
+  }
+
+  _getAlarmvalue() {
+    DateTime date = DateFormat.jm().parse(_startTime.toString());
+    var myTime = DateFormat("HH:mm").format(date);
+    var alarmhour = int.parse(myTime.toString().split(":")[0]);
+    var alarmminute = int.parse(myTime.toString().split(":")[1]);
+    FlutterAlarmClock.createAlarm(alarmhour, alarmminute);
   }
 
   _showTimePicker() {
