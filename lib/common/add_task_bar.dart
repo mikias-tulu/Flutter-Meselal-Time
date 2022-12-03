@@ -34,8 +34,6 @@ class _AddTaskPageState extends State<AddTaskPage> {
   List<String> repeatList = [
     "None",
     "Daily",
-    "Weekly",
-    "Monthly",
   ];
 
   int _selectedColor = 0;
@@ -174,24 +172,27 @@ class _AddTaskPageState extends State<AddTaskPage> {
               Row(
                 children: [
                   Text(
-                    'Repeat',
+                    'Repeat Daily',
                     style: titleStyle,
                   ),
-                  Switch(
-                    value: isSwitched,
-                    onChanged: (value) {
-                      setState(() {
-                        isSwitched = value;
-                        if (value == true) {
-                          _selectedRepeat = 'Daily';
-                        } else {
-                          _selectedRepeat = 'None';
-                        }
-                        print(_selectedRepeat);
-                      });
-                    },
-                    activeTrackColor: Colors.lightBlue,
-                    activeColor: Color.fromARGB(255, 9, 108, 189),
+                  Transform.scale(
+                    scale: 1.32,
+                    child: Switch(
+                      value: isSwitched,
+                      onChanged: (value) {
+                        setState(() {
+                          isSwitched = value;
+                          if (value == true) {
+                            _selectedRepeat = 'Daily';
+                          } else {
+                            _selectedRepeat = 'None';
+                          }
+                          print(_selectedRepeat);
+                        });
+                      },
+                      activeTrackColor: Colors.lightBlue,
+                      activeColor: Color.fromARGB(255, 9, 108, 189),
+                    ),
                   ),
                 ],
               ),
