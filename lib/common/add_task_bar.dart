@@ -39,6 +39,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
   ];
 
   int _selectedColor = 0;
+  bool isSwitched = false;
 
   @override
   Widget build(BuildContext context) {
@@ -56,12 +57,12 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 style: headingStyle,
               ),
               MyInputField(
-                title: "title",
+                title: "Title",
                 hint: "Enter your title",
                 controller: _titleController,
               ),
               MyInputField(
-                title: "note",
+                title: "Note",
                 hint: "Enter your note",
                 controller: _noteController,
               ),
@@ -81,7 +82,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                 children: [
                   Expanded(
                     child: MyInputField(
-                      title: "Start Date",
+                      title: "Start Time",
                       hint: _startTime,
                       widget: IconButton(
                         onPressed: () {
@@ -99,7 +100,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   ),
                   Expanded(
                     child: MyInputField(
-                      title: "End Date",
+                      title: "End Time",
                       hint: _endTime,
                       widget: IconButton(
                         onPressed: () {
@@ -139,7 +140,8 @@ class _AddTaskPageState extends State<AddTaskPage> {
                   }).toList(),
                 ),
               ), */
-              MyInputField(
+
+              /* MyInputField(
                 title: "Repeat",
                 hint: "$_selectedRepeat",
                 widget: DropdownButton(
@@ -165,6 +167,33 @@ class _AddTaskPageState extends State<AddTaskPage> {
                     );
                   }).toList(),
                 ),
+              ), */
+              const SizedBox(
+                height: 18,
+              ),
+              Row(
+                children: [
+                  Text(
+                    'Repeat',
+                    style: titleStyle,
+                  ),
+                  Switch(
+                    value: isSwitched,
+                    onChanged: (value) {
+                      setState(() {
+                        isSwitched = value;
+                        if (value == true) {
+                          _selectedRepeat = 'Daily';
+                        } else {
+                          _selectedRepeat = 'None';
+                        }
+                        print(_selectedRepeat);
+                      });
+                    },
+                    activeTrackColor: Colors.lightBlue,
+                    activeColor: Color.fromARGB(255, 9, 108, 189),
+                  ),
+                ],
               ),
               const SizedBox(
                 height: 18,
@@ -294,7 +323,7 @@ class _AddTaskPageState extends State<AddTaskPage> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Text",
+          "Tag",
           style: titleStyle,
         ),
         const SizedBox(
