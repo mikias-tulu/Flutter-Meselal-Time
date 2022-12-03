@@ -64,6 +64,7 @@ class _HomePageState extends State<HomePage> {
             itemBuilder: (_, index) {
               Task task = _taskController.taskList[index];
               print(task.toJson());
+
               if (task.repeat == 'Daily') {
                 DateTime date =
                     DateFormat.jm().parse(task.startTime.toString());
@@ -72,7 +73,28 @@ class _HomePageState extends State<HomePage> {
                     int.parse(myTime.toString().split(":")[0]),
                     int.parse(myTime.toString().split(":")[1]),
                     task);
+                return AnimationConfiguration.staggeredList(
+                  position: index,
+                  child: SlideAnimation(
+                      child: FadeInAnimation(
+                    child: Row(
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            _showBottomSheet(context,
+                                task); // task is _taskController.taskList[index]
+                          },
+                          child: TaskTile(task),
+                        ),
+                      ],
+                    ),
+                  )),
+                );
+              }
 
+              if (task.repeat == 'Weekly') {
+                final weeklyimp = _selectedDate.add(const Duration(days: 7));
+                //task.date == DateFormat.yMd().format(weeklyimp);
                 return AnimationConfiguration.staggeredList(
                   position: index,
                   child: SlideAnimation(
