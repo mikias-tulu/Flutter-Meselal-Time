@@ -36,7 +36,15 @@
 
 ## About The Project
 
-![Screen Shot](Meselal.png)
+![Screen Shot]()
+<p align="center">
+<a href="url"><img src="https://raw.githubusercontent.com/mikias-tulu/Flutter-Meselal-Time/master/Meselal.png" align="left" height="800"></a> <br>
+</br>
+</p>
+<br /><br /> 
+
+## 
+
 
 Task management tools address a general need to organize, prioritize and visualize work. Through analysis, you learn how to get things done in more effective ways. Part of being organized includes setting priorities for tasks, visualizing the progress of tasks as they pass through stages of completion and compiling analysis or reports to direct future tasks and workflows.
 
