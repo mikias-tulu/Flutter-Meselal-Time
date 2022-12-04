@@ -36,7 +36,7 @@
 
 ## About The Project
 
-![Screen Shot](meselal.png)
+![Screen Shot](Meselal.png)
 
 Task management tools address a general need to organize, prioritize and visualize work. Through analysis, you learn how to get things done in more effective ways. Part of being organized includes setting priorities for tasks, visualizing the progress of tasks as they pass through stages of completion and compiling analysis or reports to direct future tasks and workflows.
 
