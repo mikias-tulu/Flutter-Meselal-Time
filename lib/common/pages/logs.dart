@@ -7,6 +7,7 @@ import 'package:intl/intl.dart';
 import '../../controllers/task_controller.dart';
 import '../../models/task.dart';
 import '../widgets/task_tile.dart';
+import 'package:dos/common/pages/profile.dart';
 
 class Logs extends StatefulWidget {
   final Task? task;
@@ -28,10 +29,15 @@ class _LogsState extends State<Logs> {
         titleTextStyle: subHeadingStyle.copyWith(color: Colors.grey[600]),
         elevation: 0,
         backgroundColor: context.theme.backgroundColor,
-        actions: const [
-          CircleAvatar(
-            backgroundImage: AssetImage(
-              "Assets/images/profile.png",
+        actions: [
+          GestureDetector(
+            onTap: () {
+              Get.to(() => const ProfilePage());
+            },
+            child: const CircleAvatar(
+              backgroundImage: AssetImage(
+                "Assets/images/profile.png",
+              ),
             ),
           ),
           SizedBox(
