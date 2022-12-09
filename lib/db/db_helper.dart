@@ -25,7 +25,7 @@ class DBHelper {
           //"remind INTEGER, "
           "repeat STRING, "
           "color INTEGER, "
-          "alarmTime STRING, "
+          //"alarmTime STRING, "
           "isCompleted INTEGER)",
         );
       });
