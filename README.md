@@ -9,7 +9,7 @@
     </b>
     ⭐️  This is your life. It's time you took control!  ⭐️ <br>
 </h1>
-  
+ </p> 
 
   <p align="center">
   
