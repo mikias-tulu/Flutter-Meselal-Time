@@ -11,20 +11,6 @@
 </h1>
  </p> 
 
-  <p align="center">
-  
-    <br/>
-    <br/>
-    <a href="https://github.com/Mikias-tulu/flutter-meselal-time"><strong>Explore »</strong></a>
-    <br/>
-    <br/>
-    <a href="[https://github.com/Mikias-tulu/flutter-meselal-time](https://github.com/mikias-tulu/Flutter-Meselal-Time/releases/download/v0.0.1/app-release.apk)">Try release</a>
-    .
-    <a href="https://github.com/Mikias-tulu/flutter-meselal-time/issues">Report Bug</a>
-    .
-    <a href="https://github.com/Mikias-tulu/flutter-meselal-time/issues">Request Feature</a>
-  </p>
-</p>
 
 ![Downloads](https://img.shields.io/github/downloads/Mikias-tulu/flutter-meselal-time/total) ![Contributors](https://img.shields.io/github/contributors/Mikias-tulu/flutter-meselal-time?color=dark-green) ![Issues](https://img.shields.io/github/issues/Mikias-tulu/flutter-meselal-time) ![License](https://img.shields.io/github/license/Mikias-tulu/flutter-meselal-time) 
 
