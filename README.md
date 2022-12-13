@@ -6,9 +6,9 @@
 <h1 align="center" style="border-bottom: none">
     <b>
         <a href="https://github.com/Mikias-tulu/flutter-meselal-time">Meselal: Task Management App</a><br>
-    </b>
-    ⭐️  This is your life. It's time you took control!  ⭐️ <br>
-</h1>
+    </b></h1>
+    <h2 align="center" style="border-bottom: none"><i>⭐️  This is your life. It's time you took control!  ⭐️ </i>
+</h2>
 </p> 
 <p align="center">
     <a href="https://github.com/Mikias-tulu/flutter-meselal-time"><strong>Explore »</strong></a>
@@ -21,9 +21,12 @@
     <a href="https://github.com/Mikias-tulu/flutter-meselal-time/issues">Request Feature</a>
   </p>
 </p>
-
+<p align="center">
 
 ![Downloads](https://img.shields.io/github/downloads/Mikias-tulu/flutter-meselal-time/total) ![Contributors](https://img.shields.io/github/contributors/Mikias-tulu/flutter-meselal-time?color=dark-green) ![Issues](https://img.shields.io/github/issues/Mikias-tulu/flutter-meselal-time) ![License](https://img.shields.io/github/license/Mikias-tulu/flutter-meselal-time) 
+
+</p>
+
 
 ## Table Of Contents
 
