@@ -73,22 +73,23 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
       ),
       pages: [
         PageViewModel(
-          title: "Fractional shares",
+          title: "Manage and organize workloads",
           body:
-              "Instead of having to buy an entire share, invest any amount you want.",
+              "Know what you have to do, and which items have priority. Assign and execute.",
           image: _buildImage('img1.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Learn as you go",
+          title: "Meet deadlines",
           body:
-              "Download the Stockpile app and master the market with our mini-lesson.",
+              "Work more efficiently making missed deadlines a thing of the past.",
           image: _buildImage('img2.jpg'),
           decoration: pageDecoration,
         ),
         PageViewModel(
-          title: "Another title page",
-          body: "Another beautiful body text for this example onboarding",
+          title: "Reduce waste",
+          body:
+              "Eliminate time spent thinking of what to do next or reworking tasks that were not completed correctly on the first attempt.",
           image: _buildImage('img3.jpg'),
           footer: ElevatedButton(
             onPressed: () {
@@ -101,7 +102,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               ),
             ),
             child: const Text(
-              'FooButton',
+              'Visit website',
               style: TextStyle(color: Colors.white),
             ),
           ),
