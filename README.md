@@ -14,7 +14,7 @@
     <a href="https://github.com/Mikias-tulu/flutter-meselal-time"><strong>Explore »</strong></a>
     <br/>
     <br/>
-    <a href="[https://github.com/Mikias-tulu/flutter-meselal-time](https://github.com/mikias-tulu/Flutter-Meselal-Time/releases/download/v0.0.1/app-release.apk)">Try release</a>
+    <a href="[https://github.com/Mikias-tulu/flutter-meselal-time](https://github.com/mikias-tulu/Flutter-Meselal-Time/releases/download/v0.0.1)">Try release</a>
     .
     <a href="https://github.com/Mikias-tulu/flutter-meselal-time/issues">Report Bug</a>
     .
