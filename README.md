@@ -3,17 +3,22 @@
   <a href="https://github.com/Mikias-tulu/flutter-meselal-time">
     <img src="https://raw.githubusercontent.com/mikias-tulu/Flutter-Meselal-Time/master/assets/images/launchericon.png" alt="Logo" width="80" height="80">
   </a>
-
-  <h3 align="center">MESELAL: Task Management App</h3>
+<h1 align="center" style="border-bottom: none">
+    <b>
+        <a href="https://github.com/Mikias-tulu/flutter-meselal-time">Meselal: Task Management App</a><br>
+    </b>
+    ⭐️  This is your life. It's time you took control!  ⭐️ <br>
+</h1>
+  
 
   <p align="center">
-    This is your life. It's time you took control!
+  
     <br/>
     <br/>
-    <a href="https://github.com/Mikias-tulu/flutter-meselal-time"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/Mikias-tulu/flutter-meselal-time"><strong>Explore »</strong></a>
     <br/>
     <br/>
-    <a href="https://github.com/Mikias-tulu/flutter-meselal-time">View Demo</a>
+    <a href="[https://github.com/Mikias-tulu/flutter-meselal-time](https://github.com/mikias-tulu/Flutter-Meselal-Time/releases/download/v0.0.1/app-release.apk)">Try release</a>
     .
     <a href="https://github.com/Mikias-tulu/flutter-meselal-time/issues">Report Bug</a>
     .
@@ -103,7 +108,7 @@ Distributed under the MIT License. See [LICENSE](https://github.com/Mikias-tulu/
 
 ## Authors
 
-* **Mikias Tulu** - *CS Student* - [Mikias Tulu](https://github.com/mikias-tulu) - *Built Meselal: Task Management app*
+* **Mikias Tulu**  [Mikias Tulu](https://github.com/mikias-tulu) - *Built Meselal: Task Management app*
 
 ## Acknowledgements
 
